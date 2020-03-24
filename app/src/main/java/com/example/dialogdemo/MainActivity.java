@@ -22,8 +22,17 @@ implements TrimDialogFragment.TrimDialogListener {
             @Override
             public void onClick(View view) {
                 Log.d("Button Click", "Clicked the button");
-                TrimDialogFragment trimDF = new TrimDialogFragment();
-                trimDF.show(getSupportFragmentManager(), null);
+                EditText inputET = findViewById(R.id.inputET);
+                String theInput = inputET.getText().toString();
+                if(theInput.equals("")){
+                    usePlainInput();
+                } else if (theInput.charAt(0)==' '
+                        || theInput.charAt(theInput.length()-1)==' ' ) {
+                    TrimDialogFragment trimDF = new TrimDialogFragment();
+                    trimDF.show(getSupportFragmentManager(), null);
+                } else {
+                    usePlainInput();
+                }
             }
         });
     }
