@@ -7,7 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+implements TrimDialogFragment.TrimDialogListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,5 +24,16 @@ public class MainActivity extends AppCompatActivity {
                 trimDF.show(getSupportFragmentManager(), null);
             }
         });
+    }
+
+    @Override
+    public void useTrimedInput() {
+        Log.d("Callback","Positive button callback invoked" );
+    }
+
+    @Override
+    public void usePlainInput() {
+        Log.d("Callback","Negative button callback invoked" );
+
     }
 }
