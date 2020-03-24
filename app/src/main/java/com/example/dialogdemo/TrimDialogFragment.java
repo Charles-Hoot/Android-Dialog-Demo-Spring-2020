@@ -42,6 +42,14 @@ public class TrimDialogFragment extends DialogFragment {
                         myActivity.useTrimedInput();
                     }
                 });
+        builder.setNegativeButton("Use without trim.",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Log.d("Dialog Click", "Negative Dialog Button pressed");
+                        myActivity.usePlainInput();
+                    }
+                });
         return builder.create();
     }
 }

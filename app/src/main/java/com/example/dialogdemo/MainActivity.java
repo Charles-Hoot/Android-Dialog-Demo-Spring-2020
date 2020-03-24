@@ -40,6 +40,10 @@ implements TrimDialogFragment.TrimDialogListener {
     @Override
     public void usePlainInput() {
         Log.d("Callback","Negative button callback invoked" );
+        EditText inputET = findViewById(R.id.inputET);
+        String theInput = inputET.getText().toString();
+        TextView resultTV = findViewById(R.id.resultTV);
+        resultTV.setText("<<"+theInput+">>");
 
     }
 }
