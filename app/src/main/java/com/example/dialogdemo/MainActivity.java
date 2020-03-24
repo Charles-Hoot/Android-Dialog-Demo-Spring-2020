@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
 implements TrimDialogFragment.TrimDialogListener {
@@ -29,6 +31,10 @@ implements TrimDialogFragment.TrimDialogListener {
     @Override
     public void useTrimedInput() {
         Log.d("Callback","Positive button callback invoked" );
+        EditText inputET = findViewById(R.id.inputET);
+        String theInput = inputET.getText().toString().trim();
+        TextView resultTV = findViewById(R.id.resultTV);
+        resultTV.setText("<<"+theInput+">>");
     }
 
     @Override
