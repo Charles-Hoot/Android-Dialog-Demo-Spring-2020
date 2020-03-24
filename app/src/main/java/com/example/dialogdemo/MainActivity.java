@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d("Button Click", "Clicked the button");
+                TrimDialogFragment trimDF = new TrimDialogFragment();
+                trimDF.show(getSupportFragmentManager(), null);
             }
         });
     }
